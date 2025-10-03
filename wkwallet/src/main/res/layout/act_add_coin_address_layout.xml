@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/wk_title_bar_layout" />
+
+
+    <LinearLayout
+        android:id="@+id/add_coin_address_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="币种/提币网络"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+
+        <!-- 使用 RelativeLayout 包裹 EditText 和 ImageView -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/layout_bg">
+
+            <EditText
+                android:id="@+id/et_coin_main_coin_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:layout_toStartOf="@+id/iv_coin_type_icon"
+                android:inputType="none"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:clickable="true"
+                android:background="@drawable/layout_bg"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:gravity="start"/>
+
+            <!-- 在 EditText 右侧添加 ImageView -->
+            <ImageView
+                android:id="@+id/iv_coin_type_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/icon_arrow_dropdown" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 卡号输入框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提币地址"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/et_coin_address_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="输入或粘贴地址"
+            android:background="@drawable/layout_bg"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:gravity="start" />
+    </LinearLayout>
+
+    <!-- 下一步按钮 -->
+    <Button
+        android:id="@+id/btn_next"
+        style="@style/buttonNormal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:alpha="0.2"
+        android:enabled="false"
+        android:text="@string/next_st_hint"
+        android:layout_marginTop="50dp"
+        app:cornerRadius="@dimen/button_radian"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="16dp" />
+</LinearLayout>

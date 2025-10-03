@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/wk_title_bar_layout" />
+
+    <!-- 红包免密 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/homeColor"
+        android:padding="16dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_red_packet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/redpackage_mianmi_hint"
+            android:textSize="16sp"
+            android:textColor="@color/colorDark" />
+
+        <Switch
+            android:id="@+id/switch_red_packet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false" />
+    </LinearLayout>
+
+    <!-- 红包免密说明 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="小额(200元内)免密功能开启后每输入一次密码可20次免输入密码支付，为了您资金安全慎重开启！"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:padding="16dp" />
+
+    <!-- 转账免密 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_transfer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/zhuanzhang_mianmi_hint"
+            android:textSize="16sp"
+            android:textColor="@color/colorDark" />
+
+        <Switch
+            android:id="@+id/switch_transfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false" />
+    </LinearLayout>
+
+    <!-- 转账免密说明 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="小额(200元内)免密功能开启后每输入一次密码可20次免输入密码支付，为了您资金安全慎重开启！"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:padding="16dp" />
+
+</LinearLayout>

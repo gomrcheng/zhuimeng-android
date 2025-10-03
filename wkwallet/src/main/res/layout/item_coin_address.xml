@@ -1,0 +1,53 @@
+<!-- res/layout/item_bank_card.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="@drawable/layout_bg"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:padding="3dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_main_coin_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxxxxxxxxxx"
+            android:textSize="16sp"
+            android:textColor="@color/colorDark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_coin_symbol"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+    </LinearLayout>
+    <!-- 卡号 -->
+    <TextView
+        android:id="@+id/tv_coin_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="5dp"
+        android:text="•••• •••• •••• 1123"
+        android:textSize="16sp"
+        android:textColor="@color/colorDark" />
+</LinearLayout>

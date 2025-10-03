@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/wk_title_bar_layout" />
+
+    <!-- 到账账户 -->
+    <LinearLayout
+        android:id="@+id/choose_zhanghu_account_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="@drawable/layout_bg"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/daozhangzhanghu"
+            android:textSize="16sp"
+            android:textColor="@color/colorDark" />
+
+        <TextView
+            android:id="@+id/withdraw_bank_cards_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_daodaozhanghu"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/ic_arrow_right" />
+    </LinearLayout>
+
+    <!-- 提现金额区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/layout_bg"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/withdraw_fee_hint"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:textColor="@color/colorDark"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textSize="18dp"-->
+<!--                android:text="¥"/>-->
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0.00"
+                app:prefixText="¥"
+                android:background="@drawable/layout_bg"
+                android:textSize="16sp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:paddingLeft="3dp"
+                android:inputType="numberDecimal"
+                android:layout_marginEnd="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_balance_keyong_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/keyongyue_hint"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_balance_keyong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="¥0"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_balance_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all_withdraw_hint"
+                android:textSize="12sp"
+                android:layout_marginLeft="4dp"
+                android:textColor="#FF5722"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 提现按钮 -->
+    <Button
+        android:id="@+id/btn_withdraw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/buttonNormal"
+        android:text="@string/withdrawal"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- 提现说明 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tv_withdraw_shuoming"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="16dp"
+        android:text="提现说明:\n1.提现手续费0.1%\n2.最小提现金额1.00\n3.最大提现金额10000.00\n4.请仔细填写真实正确的提现账户，否则将影响资金到账状况\n如2小时后未到账，请联系 客服"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:lineSpacingExtra="4sp"
+        android:layout_marginHorizontal="16dp" />
+
+</LinearLayout>

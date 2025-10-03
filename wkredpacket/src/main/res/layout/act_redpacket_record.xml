@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <!-- 顶部导航栏 -->
+    <include layout="@layout/wk_title_bar_layout" />
+
+    <!-- 主体内容 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CD5C5C"
+        android:orientation="vertical">
+
+        <!-- 标签页：收到的红包 / 发出的红包 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收到的红包"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="8dp"
+                android:radius="20dp" />
+
+            <TextView
+                android:id="@+id/tvSent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发出的红包"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="8dp"
+                android:layout_marginStart="16dp"
+                 />
+        </LinearLayout>
+
+        <com.chat.base.ui.components.AvatarView
+            android:id="@+id/ivAvatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <!-- 用户名 -->
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:text="贾元春共收到"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <!-- 总金额 -->
+        <TextView
+            android:id="@+id/tvTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="¥4.72"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- 分割线 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF" />
+
+        <!-- 统计信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvReceivedCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收到红包 5 个"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/redpacket_record_shu"
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvBestLuck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手气最佳 1 个"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 列表区域 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5" />
+
+    <TextView
+        android:id="@+id/tvLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="loading..."
+        android:textColor="#999999"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

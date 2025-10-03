@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:paddingTop="22dp"
+        android:background="@color/redpacket_bg_top"
+        android:layout_height="104dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/redpacket_bg_top"
+            android:paddingTop="20dp">
+
+            <RelativeLayout
+                android:id="@+id/title_ly"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:id="@+id/red_back_tv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="关闭"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@mipmap/return_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:text="@string/title_red_packet"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/get_redlist_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/red_packet_history"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatarIv"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:id="@+id/red_nickname_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/someone_s_red_packet"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/red_words_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:text="@string/best_wishes"
+            android:textColor="@color/Grey_800"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <TextView
+                android:id="@+id/get_money_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="9dp"
+                android:textColor="#FFE294"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:text="10.00" />
+
+            <TextView
+                android:id="@+id/get_money_bit_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FFE294"
+                android:layout_toRightOf="@+id/get_money_tv"
+                android:textSize="14sp"
+                tools:text="元" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/reply_red_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="9dp"
+            android:text="@string/reply_red_thank"
+            android:textColor="@color/yellow"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/layout_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textColor="@color/colorDark"
+        android:textSize="14sp"
+        android:visibility="visible" />
+
+    <View style="@style/View_Line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/red_details_lsv"
+        android:layout_width="match_parent"
+        android:background="@drawable/layout_bg"
+        android:layout_height="match_parent"
+      />
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/wk_title_bar_layout" />
+
+
+    <RelativeLayout
+        android:id="@+id/bill"
+        style="@style/IMTble_No_Line"
+        android:layout_marginTop="9dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/string_zd"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/IMTbleLine_TextValue"
+            android:textColor="@color/dark_dark_grey"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/right_arrow_icon"
+            android:contentDescription="@string/app_name" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlChangePwd"
+        style="@style/IMTble_No_Line">
+
+        <View style="@style/View_Line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/string_xgzfmm"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/IMTbleLine_TextValue"
+            android:textColor="@color/dark_dark_grey"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/right_arrow_icon"
+            android:contentDescription="@string/app_name" />
+
+    </RelativeLayout>
+    <View style="@style/View_Line" />
+
+</LinearLayout>

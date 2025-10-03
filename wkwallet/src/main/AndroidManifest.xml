@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity android:name=".ui.WalletActivity"/>
+        <activity android:name=".ui.InputzhifuPwdActivity"/>
+        <activity android:name=".ui.WKResetPayPwdActivity"/>
+        <activity android:name=".ui.RechargeActivity"/>
+        <activity android:name=".ui.WithdrawActivity"/>
+        <activity android:name=".ui.BankCardsListActivity"/>
+        <activity android:name=".ui.MianmiActivity"/>
+        <activity android:name=".ui.ZhifuPwdResetActivity"/>
+        <activity android:name=".ui.KefuListActivity"/>
+        <activity android:name=".ui.RedPacketRecordActivity"/>
+        <activity android:name=".ui.AddBankCards2Activity"/>
+        <activity android:name=".ui.AddBankCards1Activity"/>
+        <activity android:name=".ui.TransactionRecordActivity"/>
+        <activity android:name=".ui.RechargeChannelsListActivity"/>
+        <activity android:name=".ui.RechargeCoinActivity"/>
+        <activity android:name=".ui.CoinListActivity"/>
+        <activity android:name=".ui.AddCoinAddressActivity"/>
+        <activity android:name=".ui.WithdrawCoinActivity"/>
+    </application>
+</manifest>

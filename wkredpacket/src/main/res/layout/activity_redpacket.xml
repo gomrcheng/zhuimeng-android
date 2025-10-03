@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:paddingTop="22dp"
+        android:layout_height="104dp"
+        android:background="@color/redpacket_bg_top">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <TextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:text="关闭"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_title_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:text="@string/send_red_packet"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/redpacket_tabl_ll"
+        android:paddingTop="28dp"
+        android:background="@color/homeColor"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_segment"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                app:tabMinWidth="80dp"
+                app:tabMaxWidth="200dp"
+                app:tabPaddingStart="8dp"
+                app:tabPaddingEnd="8dp"
+                app:tabPaddingTop="6dp"
+                app:tabPaddingBottom="6dp"
+                android:background="@color/homeColor"
+                app:tabIndicatorColor="@color/transparent"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorGravity="bottom"
+                app:tabGravity="center"
+                app:tabTextColor="#d8d5d5"
+                app:tabSelectedTextColor="#D99720"
+                app:tabIndicatorHeight="0dp"
+                app:tabMode="fixed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagert_redpacket"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/smarttablayout_redpacket" />
+
+</LinearLayout>

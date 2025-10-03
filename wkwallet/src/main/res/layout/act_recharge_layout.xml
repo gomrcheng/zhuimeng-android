@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/wk_title_bar_layout" />
+
+    <!-- 充值内容区域 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- 充值金额标签 -->
+        <TextView
+            android:id="@+id/tv_recharge_amount_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recharge_fee_hint"
+            android:textSize="16sp"
+            android:textColor="@color/colorDark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp" />
+        <!-- 金额输入框 -->
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/recharge_fee_et_hint"
+            app:prefixText="¥"
+            android:padding="12dp"
+            android:background="@drawable/layout_bg"
+            android:textSize="16sp"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/tv_recharge_amount_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp" />
+
+        <!-- 当前余额提示 -->
+        <TextView
+            android:id="@+id/tv_current_balance_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/now_wallet_fee_hint"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            app:layout_constraintTop_toBottomOf="@id/et_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp" />
+        <TextView
+            android:id="@+id/tv_current_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            app:layout_constraintTop_toBottomOf="@id/et_amount"
+            app:layout_constraintStart_toEndOf="@id/tv_current_balance_hint"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp" />
+
+        <!-- 快捷金额 RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_quick_amounts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_current_balance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="16dp" />
+
+        <!-- 下一步按钮 -->
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/buttonNormal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:alpha="0.2"
+            android:enabled="false"
+            android:text="@string/next_st_hint"
+            android:layout_marginTop="50dp"
+            app:cornerRadius="@dimen/button_radian"
+            app:layout_constraintTop_toBottomOf="@id/rv_quick_amounts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

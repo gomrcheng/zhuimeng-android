@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+   <LinearLayout
+       android:layout_marginLeft="8dp"
+       android:layout_marginRight="8dp"
+       android:layout_marginBottom="2dp"
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:background="@drawable/layout_bg_rounded"
+       android:layout_height="wrap_content">
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:text="选择币种"
+        android:textSize="16sp"
+        android:textColor="@color/colorDark"
+        android:padding="9dp" />
+
+    <!-- 列表容器 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_currency_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:divider="@drawable/layout_bg"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+   </LinearLayout>
+</LinearLayout>

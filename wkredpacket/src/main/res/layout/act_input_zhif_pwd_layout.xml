@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <include layout="@layout/wk_title_bar_layout" />
+
+    <TextView
+        android:id="@+id/lockScreenPwdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/input_pwd_trans"
+        android:textColor="@color/colorDark"
+        android:textSize="@dimen/font_size_16" />
+
+    <com.chat.base.views.pwdview.NumPwdView
+        android:id="@+id/pwdView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1" />
+    <com.chat.wkredpacket.utils.RedPacketPasswordInputView
+        android:id="@+id/passwordInputView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:cursorVisible="false"
+        android:inputType="number"
+        android:maxLength="6"
+        android:minHeight="48dp"
+        app:pivBorderColor="#cccccc"
+        app:pivBorderRadius="5dp"
+        app:pivBorderWidth="5dp"
+        app:pivPasswordColor="#000000"
+        app:pivPasswordLength="6"
+        app:pivPasswordWidth="6dp" />
+</LinearLayout>

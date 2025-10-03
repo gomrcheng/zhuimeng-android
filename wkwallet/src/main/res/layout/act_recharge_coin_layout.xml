@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homeColor"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/wk_title_bar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- 添加一个垂直 LinearLayout 作为 ScrollView 的唯一子视图 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 币种选择区域 -->
+            <LinearLayout
+                android:id="@+id/ll_recharge_coin_choose_coin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/layout_bg_rounded"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/iv_recharge_coin_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/usdt_icon" />
+                <TextView
+                    android:id="@+id/tv_recharge_coin_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="end"
+                    android:text="USDT-TRC20"
+                    android:textSize="14sp"
+                    android:textColor="@color/blue" />
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/ic_arrow_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/layout_bg_rounded"
+                android:padding="16dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <!-- 二维码区域 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/iv_recharge_coin_qr_code"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp" />
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="12dp"
+                        android:background="@drawable/layout_bg"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="@color/colorDark"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <!-- 操作按钮 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_save"
+                        android:layout_width="140dp"
+                        android:layout_height="38dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="保存"
+                        android:textSize="14sp"
+                        app:icon="@mipmap/msg_download"
+                        android:background="@drawable/btn_frame_999"
+                        app:iconTint="@color/colorDark"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/colorDark"
+                        android:textColor="@color/colorDark" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_copy"
+                        android:layout_width="140dp"
+                        android:layout_height="38dp"
+                        android:text="复制"
+                        android:textSize="14sp"
+                        app:icon="@mipmap/msg_copy"
+                        app:iconTint="@color/colorDark"
+                        android:background="@drawable/btn_frame_999"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/colorDark"
+                        android:textColor="@color/colorDark" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 最小充值数 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_rounded"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="最小充值数"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorDark" />
+                <TextView
+                    android:id="@+id/tv_min_trade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1USDT-BSC"
+                    android:textSize="16sp"
+                    android:textColor="@color/color999" />
+            </LinearLayout>
+
+            <!-- 提示信息 -->
+            <TextView
+                android:id="@+id/tv_recharge_coin_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="16dp"
+                android:text="仅发送USDT(BSC)到该地址。\n发送其它加密货币可能会造成永久损失。"
+                android:textSize="9sp"
+                android:textColor="@color/color999"
+                android:gravity="start"
+                android:lineSpacingExtra="4sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
