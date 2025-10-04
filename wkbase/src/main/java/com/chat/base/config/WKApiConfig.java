@@ -12,7 +12,7 @@ public class WKApiConfig {
     public static String baseUrl = "";
     public static String baseWebUrl = "";
     public static String lineConfig = "http://host.ejvqn.cn/service.json";
-    public static String defaultUrl = "http://154.211.104.200:8090";//http://206.238.115.47:8090
+    public static String defaultUrl = "https://tgimapi.wmxxm.cn";//http://206.238.115.47:8090
 
     public static void initBaseURL(String apiURL) {
         baseUrl = apiURL + "/v1/";
