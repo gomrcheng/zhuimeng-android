@@ -1,0 +1,11 @@
+<resources>
+    <string name="security_privacy">security privacy</string>
+    <string name="add_friend_tip">You can search for friends through the following methods</string>
+    <string name="allow_phone_search">Allow phone number search</string>
+    <string name="allow_ox_search"> Allow Ouxin Number search</string>
+    <string name="close_search_tip"> After shutdown, other users will not be able to search for friends through the above information</string>
+    <string name="tab_find">Find</string>
+    <string name="tab_text_discover" >Find</string>
+    <string name="tab_text_monments" >Monents</string>
+
+</resources>

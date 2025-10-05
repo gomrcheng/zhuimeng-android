@@ -1,0 +1,11 @@
+<resources>
+    <string name="security_privacy">安全隐私</string>
+    <string name="add_friend_tip">可以通过以下方式搜索好友</string>
+    <string name="allow_phone_search">允许手机号搜索</string>
+    <string name="allow_ox_search">允许欧信号搜索</string>
+    <string name="close_search_tip">关闭后，其他用户将不能通过上述信息搜索好友</string>
+    <string name="tab_find">发现</string>
+    <string name="tab_text_discover" />
+    <string name="tab_text_monments" >朋友圈</string>
+
+</resources>

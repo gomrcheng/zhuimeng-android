@@ -119,6 +119,7 @@ dependencies {
     implementation project(path: ':wkmoments')//朋友圈
     implementation project(path: ':wksecurity')//隐私安全
     implementation project(path: ':wkcustomerservice')//客服
+    implementation project(path: ':wkfind')//发现
     implementation project(path: ':wkwallet')//钱包
     implementation project(path: ':wkredpacket')//红包
     implementation project(path: ':wktransfer')//转账

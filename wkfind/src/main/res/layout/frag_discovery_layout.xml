@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/title_bg"
+    android:orientation="vertical"
+    android:paddingTop="33dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical">
+
+        <!-- 返回按钮 -->
+        <TextView
+            android:id="@+id/backTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="15dp"
+            android:text="返回"
+            android:textColor="@color/colorDark"
+            android:textSize="16dp" />
+
+        <!-- 居中的 textView -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tab_find"
+            android:textColor="@color/colorDark"
+            android:textSize="16dp" />
+
+        <!-- 更多按钮 -->
+        <ImageView
+            android:id="@+id/more_iv"
+            android:layout_width="20dp"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            android:src="@mipmap/ic_call" />
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="gone"
+        android:progress="50"
+        android:progressDrawable="@drawable/greenprogress" />
+
+    <com.chat.base.jsbrigde.BridgeWebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:background="@color/homeColor" />
+
+</LinearLayout>

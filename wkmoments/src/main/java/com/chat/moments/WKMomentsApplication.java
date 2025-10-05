@@ -76,16 +76,27 @@ public class WKMomentsApplication {
         if (!WKBaseApplication.getInstance().appModuleIsInjection(appModule))
             return;
         this.context = new WeakReference<>(context);
-        EndpointManager.getInstance().setMethod(EndpointCategory.mailList + "_moments", EndpointCategory.mailList, 200, object -> {
-            ContactsMenu contactsMenu = new ContactsMenu("moments", R.mipmap.icon_moments, context.getString(R.string.str_moments), () -> {
+//        EndpointManager.getInstance().setMethod(EndpointCategory.mailList + "_moments", EndpointCategory.mailList, 200, object -> {
+//            ContactsMenu contactsMenu = new ContactsMenu("moments", R.mipmap.icon_moments, context.getString(R.string.str_moments), () -> {
+//                Intent intent = new Intent(context, MomentsActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(intent);
+//            });
+//            contactsMenu.badgeNum = WKSharedPreferencesUtil.getInstance().getInt(WKConfig.getInstance().getUid() + "_moments_msg_count");
+//            contactsMenu.uid = WKSharedPreferencesUtil.getInstance().getSP(WKConfig.getInstance().getUid() + "_moments_msg_uid");
+//            return contactsMenu;
+//        });
+
+        //暴露启动朋友圈
+        EndpointManager.getInstance().setMethod("start_monents", object -> {
+            if (object instanceof Context context1) {
                 Intent intent = new Intent(context, MomentsActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
-            });
-            contactsMenu.badgeNum = WKSharedPreferencesUtil.getInstance().getInt(WKConfig.getInstance().getUid() + "_moments_msg_count");
-            contactsMenu.uid = WKSharedPreferencesUtil.getInstance().getSP(WKConfig.getInstance().getUid() + "_moments_msg_uid");
-            return contactsMenu;
+                context1.startActivity(intent);
+            }
+            return null;
         });
+
 
         //监听登录成功后将朋友圈背景清空重新下载
         EndpointManager.getInstance().setMethod("", EndpointCategory.loginMenus, object -> {

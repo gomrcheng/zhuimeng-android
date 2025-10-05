@@ -62,10 +62,10 @@ import java.util.List;
 public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
     CounterView msgCounterView;
     CounterView contactsCounterView;
-    //    CounterView workplaceCounterView;
+    CounterView workplaceCounterView;
     View contactsSpotView;
-    RLottieImageView chatIV, contactsIV, meIV;
-    private TextView chatTV, contactsTV, meTV;
+    RLottieImageView chatIV, contactsIV, meIV,workplaceIV;
+    private TextView chatTV, contactsTV, meTV,workplaceTV;
     private long lastClickChatTabTime = 0L;
     private final boolean isShowTabText = true;
 
@@ -110,15 +110,17 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
 
         chatIV = new RLottieImageView(this);
         contactsIV = new RLottieImageView(this);
-//        workplaceIV = new RLottieImageView(this);
+        workplaceIV = new RLottieImageView(this);
         meIV = new RLottieImageView(this);
         chatTV = new TextView(this);
         contactsTV = new TextView(this);
+        workplaceTV = new TextView(this);
         meTV = new TextView(this);
         Typeface face = Typeface.createFromAsset(getResources().getAssets(),
                 "fonts/mw_bold.ttf");
         chatTV.setTypeface(face);
         contactsTV.setTypeface(face);
+        workplaceTV.setTypeface(face);
         meTV.setTypeface(face);
         chatTV.setText(R.string.tab_text_chat);
         chatTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
@@ -126,14 +128,19 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
         contactsTV.setText(R.string.tab_text_contacts);
         contactsTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
         contactsTV.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12);
+
+        workplaceTV.setText("发现");
+        workplaceTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
+        workplaceTV.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12);
+
         meTV.setText(R.string.tab_text_me);
         meTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
         meTV.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 12);
         List<Fragment> fragments = new ArrayList<>(3);
         fragments.add(new ChatFragment());
         fragments.add(new ContactsFragment());
-//        Fragment workplaceFra = (Fragment) EndpointManager.getInstance().invoke("get_workplace_fragment", null);
-//        fragments.add(workplaceFra);
+        Fragment workplaceFra = (Fragment) EndpointManager.getInstance().invoke("get_workplace_fragment", null);
+        fragments.add(workplaceFra);
         fragments.add(new MyFragment());
 
         wkVBinding.vp.setAdapter(new WKFragmentStateAdapter(this, fragments));
@@ -148,7 +155,7 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
         WKCommonModel.getInstance().getAppConfig(null);
         wkVBinding.bottomNavigation.getOrCreateBadge(R.id.i_chat).setVisible(false);
         wkVBinding.bottomNavigation.getOrCreateBadge(R.id.i_my).setVisible(false);
-//        wkVBinding.bottomNavigation.getOrCreateBadge(R.id.i_workplace).setVisible(false);
+        wkVBinding.bottomNavigation.getOrCreateBadge(R.id.i_workplace).setVisible(false);
         wkVBinding.bottomNavigation.getOrCreateBadge(R.id.i_chat).setVisible(false);
         FrameLayout view = wkVBinding.bottomNavigation.findViewById(R.id.i_chat);
         msgCounterView = new CounterView(this);
@@ -177,9 +184,18 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
         contactsView.addView(contactsSpotView, LayoutHelper.createFrame(10, 10, Gravity.CENTER_HORIZONTAL, 10, 10, 0, 0));
 
 
-//        FrameLayout workplaceView = wkVBinding.bottomNavigation.findViewById(R.id.i_workplace);
-//        workplaceCounterView = new CounterView(this);
-//        workplaceCounterView.setColors(R.color.white, R.color.reminderColor);
+        FrameLayout workplaceView = wkVBinding.bottomNavigation.findViewById(R.id.i_workplace);
+        workplaceCounterView = new CounterView(this);
+        workplaceCounterView.setColors(R.color.white, R.color.reminderColor);
+
+        if (isShowTabText) {
+            workplaceView.addView(workplaceIV, LayoutHelper.createFrame(35, 35, Gravity.CENTER | Gravity.TOP, 0, 5, 0, 0));
+            workplaceView.addView(workplaceTV, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER, 0, 15, 0, 0));
+        } else {
+            workplaceView.addView(workplaceIV, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER));
+        }
+
+
 //        workplaceView.addView(workplaceIV, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER));
 //        workplaceView.addView(workplaceCounterView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER, 20, 5, 0, 15));
 
@@ -193,7 +209,7 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
         }
         contactsSpotView.setVisibility(View.GONE);
         contactsCounterView.setVisibility(View.GONE);
-//        workplaceCounterView.setVisibility(View.GONE);
+        workplaceCounterView.setVisibility(View.GONE);
         msgCounterView.setVisibility(View.GONE);
         playAnimation(0);
 
@@ -213,10 +229,10 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
                     playAnimation(1);
                     wkVBinding.bottomNavigation.setSelectedItemId(R.id.i_contacts);
                 }
-//                else if (position == 2) {
-//                    playAnimation(2);
-//                    wkVBinding.bottomNavigation.setSelectedItemId(R.id.i_workplace);
-//                }
+                else if (position == 2) {
+                    playAnimation(2);
+                    wkVBinding.bottomNavigation.setSelectedItemId(R.id.i_workplace);
+                }
                 else {
                     playAnimation(3);
                     wkVBinding.bottomNavigation.setSelectedItemId(R.id.i_my);
@@ -240,10 +256,10 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
                 wkVBinding.vp.setCurrentItem(1);
                 playAnimation(1);
             }
-//            else if (item.getItemId() == R.id.i_workplace) {
-//                wkVBinding.vp.setCurrentItem(2);
-//                playAnimation(2);
-//            }
+            else if (item.getItemId() == R.id.i_workplace) {
+                wkVBinding.vp.setCurrentItem(2);
+                playAnimation(2);
+            }
             else {
                 wkVBinding.vp.setCurrentItem(3);
                 playAnimation(3);
@@ -343,41 +359,45 @@ public class TabActivity extends WKBaseActivity<ActTabMainBinding> {
             meIV.setImageResource(R.mipmap.ic_mine_n);
             contactsIV.setImageResource(R.mipmap.ic_contacts_n);
             chatIV.setImageResource(R.mipmap.ic_chat_s);
-//            workplaceIV.setImageResource(R.mipmap.ic_contacts_n);
+            workplaceIV.setImageResource(R.mipmap.ic_work_palce_n);
             if (isShowTabText) {
                 chatTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_selected));
                 contactsTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
                 meTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
+                workplaceTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
             }
         } else if (index == 1) {
             meIV.setImageResource(R.mipmap.ic_mine_n);
             chatIV.setImageResource(R.mipmap.ic_chat_n);
             contactsIV.setImageResource(R.mipmap.ic_contacts_s);
-//            workplaceIV.setImageResource(R.mipmap.ic_contacts_n);
+            workplaceIV.setImageResource(R.mipmap.ic_work_palce_n);
             if (isShowTabText) {
                 chatTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
                 contactsTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_selected));
                 meTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
+                workplaceTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
             }
         } else if (index == 2) {
             meIV.setImageResource(R.mipmap.ic_mine_n);
             chatIV.setImageResource(R.mipmap.ic_chat_n);
             contactsIV.setImageResource(R.mipmap.ic_contacts_n);
-//            workplaceIV.setImageResource(R.mipmap.ic_contacts_s);
+            workplaceIV.setImageResource(R.mipmap.ic_work_palce_s);
             if (isShowTabText) {
                 chatTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
                 contactsTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
                 meTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
+                workplaceTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_selected));
             }
         } else {
             chatIV.setImageResource(R.mipmap.ic_chat_n);
             contactsIV.setImageResource(R.mipmap.ic_contacts_n);
             meIV.setImageResource(R.mipmap.ic_mine_s);
-//            workplaceIV.setImageResource(R.mipmap.ic_contacts_n);
+            workplaceIV.setImageResource(R.mipmap.ic_work_palce_n);
             if (isShowTabText) {
                 chatTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
                 contactsTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
                 meTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_selected));
+                workplaceTV.setTextColor(ContextCompat.getColor(this, R.color.tab_text_normal));
             }
         }
     }

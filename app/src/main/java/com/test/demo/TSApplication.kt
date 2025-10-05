@@ -34,6 +34,7 @@ import com.chat.base.utils.language.WKMultiLanguageUtil
 import com.chat.customerservice.WKCustomerServiceApplication
 import com.chat.favorite.WKFavoriteApplication
 import com.chat.file.WKFileApplication
+import com.chat.find.WKFind
 import com.chat.groupmanage.WKGroupManageApplication
 import com.chat.imgeditor.WKImageEditorApplication
 import com.chat.label.WKLabelApplication
@@ -135,6 +136,7 @@ class TSApplication : MultiDexApplication() {
         WKMomentsApplication.getInstance().init( this)//朋友圈
         WKSecurityApplication.instance.init()//隐私安全
         WKCustomerServiceApplication.instance.init()//客服模块
+        WKFind.getInstance().init();//发现模块
         WKWalletApplication.getInstance().init(this);//钱包模块
         WKRedpacketApplication.getInstance().init(this)//红包模块
         WKTransferApplication.getInstance().init(this)//转账模块
